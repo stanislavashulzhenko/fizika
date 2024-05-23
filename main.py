@@ -87,6 +87,7 @@ v3_3d=1.014
 v3_4d=0.988
 v3_5d=0.987
 
+# ------------------------------------------------------------------------------------------------------------------------------
 # Tiešie mērījumi
 # Aprēķini pie h_1
 
@@ -102,4 +103,67 @@ elif gad_kluda_s1 > sist_kluda_s1:
 
 rel_kluda_s1=round(abs_kluda_s1/s1_vid * 100, 2)
 
+
+
 # Aprēķini pie h_2
+
+s2_vid=round((s2_1+s2_2+s2_3+s2_4+s2_5)/5, 3) 
+s2_kv=round(sqrt(((s2_1-s2_vid)**2+(s2_2-s2_vid)**2+(s2_3-s2_vid)**2+(s2_4-s1_vid)**2+(s2_5-s1_vid)**2)/(5*4)), 6)
+gad_kluda_s2=round(s2_kv*st_5, 3)
+sist_kluda_s2=round(mv_s/3*st_bezg, 5)
+
+if gad_kluda_s2 <= sist_kluda_s2:
+  abs_kluda_s2 = sist_kluda_s2 
+elif gad_kluda_s2 > sist_kluda_s2:
+  abs_kluda_s2 = gad_kluda_s2  
+
+rel_kluda_s2=round(abs_kluda_s2/s2_vid * 100, 2)
+
+
+
+
+# Aprēķini pie h_3
+
+s3_vid=round((s3_1+s3_2+s3_3+s3_4+s3_5)/5, 3) 
+s3_kv=round(sqrt(((s3_1-s3_vid)**2+(s3_2-s3_vid)**2+(s3_3-s3_vid)**2+(s3_4-s3_vid)**2+(s3_5-s3_vid)**2)/(5*4)), 6)
+gad_kluda_s3=round(s3_kv*st_5, 3)
+sist_kluda_s3=round(mv_s/3*st_bezg, 5)
+
+if gad_kluda_s3 <= sist_kluda_s3:
+  abs_kluda_s3 = sist_kluda_s3 
+elif gad_kluda_s3 > sist_kluda_s3:
+  abs_kluda_s3 = gad_kluda_s3  
+
+rel_kluda_s3=round(abs_kluda_s3/s3_vid * 100, 2)
+
+
+
+# Aprēķini pie h_4
+
+s4_vid=round((s4_1+s4_2+s4_3+s4_4+s4_5)/5, 3) 
+s4_kv=round(sqrt(((s4_1-s4_vid)**2+(s4_2-s4_vid)**2+(s4_3-s4_vid)**2+(s4_4-s4_vid)**2+(s4_5-s4_vid)**2)/(5*4)), 6)
+gad_kluda_s4=round(s4_kv*st_5, 3)
+sist_kluda_s4=round(mv_s/3*st_bezg, 5)
+
+if gad_kluda_s4 <= sist_kluda_s4:
+  abs_kluda_s4 = sist_kluda_s4 
+elif gad_kluda_s4 > sist_kluda_s4:
+  abs_kluda_s4 = gad_kluda_s4  
+
+rel_kluda_s4=round(abs_kluda_s4/s4_vid * 100, 2)
+
+
+
+# Aprēķini pie h_5
+
+s5_vid=round((s5_1+s5_2+s5_3+s5_4+s5_5)/5, 3) 
+s5_kv=round(sqrt(((s5_1-s5_vid)**2+(s5_2-s5_vid)**2+(s5_3-s5_vid)**2+(s5_4-s5_vid)**2+(s5_5-s5_vid)**2)/(5*4)), 6)
+gad_kluda_s5=round(s5_kv*st_5, 3)
+sist_kluda_s5=round(mv_s/3*st_bezg, 5)
+
+if gad_kluda_s5 <= sist_kluda_s5:
+  abs_kluda_s5 = sist_kluda_s5 
+elif gad_kluda_s5 > sist_kluda_s5:
+  abs_kluda_s5 = gad_kluda_s5  
+
+rel_kluda_s5=round(abs_kluda_s5/s5_vid * 100, 2)

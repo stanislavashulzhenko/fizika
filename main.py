@@ -21,6 +21,7 @@ mv_m=0.00001 # Mazāka vertība masai (kg)
 mv_l=0.001 # Mazāka vertība garumam (m)
 mv_r=0.0005 # Mazāka vertība radiusam (m)
 mv_s=0.001 # Mazāka vertība novirzei (m)
+mv_h=0.001 # Mazāka vertība augstumam (m)
 
 # Mērījumi 
 # Rāmīša novirze pie h_1 (m)
@@ -167,3 +168,50 @@ elif gad_kluda_s5 > sist_kluda_s5:
   abs_kluda_s5 = gad_kluda_s5  
 
 rel_kluda_s5=round(abs_kluda_s5/s5_vid * 100, 2)
+
+# Sistemātiskas kļūdas
+
+sist_kluda_h=round(mv_h/3*st_bezg, 5) # Augstumam
+sist_kluda_l=round(mv_l/3*st_bezg, 5) # Garumam
+
+# Netiešie mērījumi
+
+values = {
+    mr: 0.1372,
+    ml: 0.01397,
+    l: 0.749,
+    g: 9.81,
+    s1_vid: 0.065,
+    s2_vid: 0.061,
+    s3_vid: 0.056,
+    s4_vid: 0.042,
+    s5_vid: 0.022
+}
+
+# Lodītes ātrums pirms sadursmes (eksperimentāli)
+
+# Ātrums pie h_1
+
+v1_pirms=round((1+(mr/ml))*s1_vid*sqrt(g/l), 2)
+
+# Ātrums pie h_2
+
+v2_pirms=round((1+(mr/ml))*s2_vid*sqrt(g/l), 2)
+
+# Ātrums pie h_3
+
+v3_pirms=round((1+(mr/ml))*s3_vid*sqrt(g/l), 2)
+
+# Ātrums pie h_4
+
+v4_pirms=round((1+(mr/ml))*s4_vid*sqrt(g/l), 2)
+
+# Ātrums pie h_5
+
+v5_pirms=round((1+(mr/ml))*s5_vid*sqrt(g/l), 2)
+
+print(v1_pirms)
+print(v2_pirms)
+print(v3_pirms)
+print(v4_pirms)
+print(v5_pirms)

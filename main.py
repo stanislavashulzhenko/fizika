@@ -79,19 +79,19 @@ v1_5d=3.002
 
 # Lodītes ātrums (digitāli) pie h_4 (m/s)
 
-v2_1d=1.759
-v2_2d=1.765
-v2_3d=1.826
-v2_4d=1.77
-v2_5d=1.763
+v4_1d=1.759
+v4_2d=1.765
+v4_3d=1.826
+v4_4d=1.77
+v4_5d=1.763
 
 # Lodītes ātrums (digitāli) pie h_5 (m/s)
 
-v3_1d=1.011
-v3_2d=1.013
-v3_3d=1.014
-v3_4d=0.988
-v3_5d=0.987
+v5_1d=1.011
+v5_2d=1.013
+v5_3d=1.014
+v5_4d=0.988
+v5_5d=0.987
 
 # Sistemātiskas kļūdas
 
@@ -382,15 +382,55 @@ zud_4_teor=round(Ez_4_teor/Ep_4*100, 2)
 
 # Zudumi pie h_5
 
-w1_teor=v1_pirms_val/r
+w5_teor=v1_pirms_val/r
 
 Ek_5_teor=round((ml*v5_pirms_val**2)/2+(I*w5_teor**2)/2,4)
 Ez_5_teor=round(Ep_5-Ek_5_teor, 4)
 zud_5_teor=round(Ez_5_teor/Ep_5*100, 2)
 
 
+# -------------------KLUDAS------------------
 
+print(sist_kluda_h)
+print(sist_kluda_l)
+print()
 
+print("----------------------1----------------------")
+print(gad_kluda_s1)
+print(sist_kluda_s1)
+print(abs_kluda_s1)
+print(rel_kluda_s1) 
+print()
+
+print("----------------------2----------------------")
+print(gad_kluda_s2)
+print(sist_kluda_s2)
+print(abs_kluda_s2)
+print(rel_kluda_s2)
+print()
+
+print("----------------------3----------------------")
+print(gad_kluda_s3)
+print(sist_kluda_s3)
+print(abs_kluda_s3)
+print(rel_kluda_s3)
+print()
+
+print("----------------------4----------------------")
+print(gad_kluda_s4)
+print(sist_kluda_s4)
+print(abs_kluda_s4)
+print(rel_kluda_s4) 
+print()
+
+print("----------------------5----------------------")
+print(gad_kluda_s5)
+print(sist_kluda_s5)
+print(abs_kluda_s5)
+print(rel_kluda_s5)
+print()
+
+# -------------------KLUDAS------------------
 
 
 # print(v1_pirms_val)

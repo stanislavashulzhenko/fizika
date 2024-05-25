@@ -130,12 +130,12 @@ elif gad_kluda_s2 > sist_kluda_s2:
 rel_kluda_s2=round(abs_kluda_s2/s2_vid * 100, 2)
 
 
-print("s2_vid: ", s2_vid)
-print("s2_kv: ", s2_kv)
-print("gad_kluda_s2: ", gad_kluda_s2)
-print("sist_kluda_s2: ", sist_kluda_s2)
-print("abs_kluda_s2: ", abs_kluda_s2)
-print("rel_kluda_s2: ", rel_kluda_s2, "%")
+# print("s2_vid: ", s2_vid)
+# print("s2_kv: ", s2_kv)
+# print("gad_kluda_s2: ", gad_kluda_s2)
+# print("sist_kluda_s2: ", sist_kluda_s2)
+# print("abs_kluda_s2: ", abs_kluda_s2)
+# print("rel_kluda_s2: ", rel_kluda_s2, "%")
 
 
 # Aprēķini pie h_3
@@ -234,7 +234,6 @@ dV_dl_val_2=round(dV_dl_2.subs(values), 2)
 v2_pirms_kluda=round(sqrt((dV_ds_val_2*abs_kluda_s2)**2+(dV_dl_val_2*sist_kluda_l)**2), 4)
 v2_pirms_rel=round(v2_pirms_kluda/v2_pirms_val*100, 2)
 
-
 # Ātrums pie h_3
 
 v3_pirms=(1+(mr_sym/ml_sym))*s3_vid_sym*sqrt(g_sym/l_sym)
@@ -249,7 +248,6 @@ dV_dl_val_3=round(dV_dl_3.subs(values), 2)
 v3_pirms_kluda=round(sqrt((dV_ds_val_3*abs_kluda_s3)**2+(dV_dl_val_3*sist_kluda_l)**2), 4)
 v3_pirms_rel=round(v3_pirms_kluda/v3_pirms_val*100, 2)
 
-
 # Ātrums pie h_4
 
 v4_pirms=(1+(mr_sym/ml_sym))*s4_vid_sym*sqrt(g_sym/l_sym)
@@ -263,7 +261,6 @@ dV_dl_val_4=round(dV_dl_4.subs(values), 2)
 
 v4_pirms_kluda=round(sqrt((dV_ds_val_4*abs_kluda_s4)**2+(dV_dl_val_4*sist_kluda_l)**2), 4)
 v4_pirms_rel=round(v4_pirms_kluda/v4_pirms_val*100, 2)
-
 
 # Ātrums pie h_5
 
@@ -281,31 +278,101 @@ v5_pirms_rel=round(v5_pirms_kluda/v5_pirms_val*100, 2)
 
 
 
+
+
+
+
+
+
+
+
+
 # Teorētiski aprēķinātais ātrums ievērojot rotāciju
 # Ātrums pie h_1
 
 v1_iev=sqrt((10/7)*g_sym*h_1_sym)
-v1_iev_val = round(v1_iev.subs(values), 2)
+v1_iev_val = round(v1_iev.subs(values), 5)
+
+dV_dH_1=diff(v1_iev, h_1_sym)
+dV_dH_val_1=round(dV_dH_1.subs(values), 2)
+
+v1_iev_kl= round(dV_dH_val_1*sist_kluda_h, 5)
+v1_iev_rel_kl=(v1_iev_kl/v1_iev_val)*100
+
+print()
+print(v1_iev_val)
+print(v1_iev_kl)
+print(v1_iev_rel_kl)
 
 # Ātrums pie h_2
 
 v2_iev=sqrt((10/7)*g_sym*h_2_sym)
-v2_iev_val = round(v2_iev.subs(values), 2)
+v2_iev_val = round(v2_iev.subs(values), 5)
+
+dV_dH_2=diff(v2_iev, h_2_sym)
+dV_dH_val_2=round(dV_dH_2.subs(values), 2)
+
+v2_iev_kl= round(dV_dH_val_2*sist_kluda_h, 5)
+v2_iev_rel_kl=(v2_iev_kl/v2_iev_val)*100
+
+print()
+print(v2_iev_val)
+print(v2_iev_kl)
+print(v2_iev_rel_kl)
 
 # Ātrums pie h_3
 
 v3_iev=sqrt((10/7)*g_sym*h_3_sym)
-v3_iev_val = round(v3_iev.subs(values), 2)
+v3_iev_val = round(v3_iev.subs(values), 5)
+
+dV_dH_3=diff(v3_iev, h_3_sym)
+dV_dH_val_3=round(dV_dH_3.subs(values), 2)
+
+v3_iev_kl= round(dV_dH_val_3*sist_kluda_h, 5)
+v3_iev_rel_kl=(v3_iev_kl/v3_iev_val)*100
+
+print()
+print(v3_iev_val)
+print(v3_iev_kl)
+print(v3_iev_rel_kl)
 
 # Ātrums pie h_4
 
 v4_iev=sqrt((10/7)*g_sym*h_4_sym)
-v4_iev_val = round(v4_iev.subs(values), 2)
+v4_iev_val = round(v4_iev.subs(values), 5)
+
+dV_dH_4=diff(v4_iev, h_4_sym)
+dV_dH_val_4=round(dV_dH_4.subs(values), 2)
+
+v4_iev_kl= round(dV_dH_val_4*sist_kluda_h, 5)
+v4_iev_rel_kl=(v4_iev_kl/v4_iev_val)*100
+
+print()
+print(v4_iev_val)
+print(v4_iev_kl)
+print(v4_iev_rel_kl)
 
 # Ātrums pie h_5
 
 v5_iev=sqrt((10/7)*g_sym*h_5_sym)
-v5_iev_val = round(v5_iev.subs(values), 2)
+v5_iev_val = round(v5_iev.subs(values), 5)
+
+dV_dH_5=diff(v5_iev, h_5_sym)
+dV_dH_val_5=round(dV_dH_5.subs(values), 2)
+
+v5_iev_kl= round(dV_dH_val_5*sist_kluda_h, 5)
+v5_iev_rel_kl=(v5_iev_kl/v5_iev_val)*100
+
+print()
+print(v5_iev_val)
+print(v5_iev_kl)
+print(v5_iev_rel_kl)
+
+
+
+
+
+
 
 
 

@@ -39,9 +39,9 @@ s1_5=0.064
 
 # Rāmīša novirze pie h_2 (m)
 
-s2_1=0.06 
-s2_2=0.06
-s2_3=0.06
+s2_1=0.060
+s2_2=0.060
+s2_3=0.060
 s2_4=0.061
 s2_5=0.062
 
@@ -118,7 +118,7 @@ rel_kluda_s1=round(abs_kluda_s1/s1_vid * 100, 2)
 # Aprēķini pie h_2
 
 s2_vid=round((s2_1+s2_2+s2_3+s2_4+s2_5)/5, 3) 
-s2_kv=round(sqrt(((s2_1-s2_vid)**2+(s2_2-s2_vid)**2+(s2_3-s2_vid)**2+(s2_4-s1_vid)**2+(s2_5-s1_vid)**2)/(5*4)), 6)
+s2_kv=round(sqrt(((s2_1-s2_vid)**2+(s2_2-s2_vid)**2+(s2_3-s2_vid)**2+(s2_4-s2_vid)**2+(s2_5-s2_vid)**2)/(5*4)), 6)
 gad_kluda_s2=round(s2_kv*st_5, 3)
 sist_kluda_s2=round(mv_s/3*st_bezg, 5)
 
@@ -128,6 +128,15 @@ elif gad_kluda_s2 > sist_kluda_s2:
   abs_kluda_s2 = gad_kluda_s2  
 
 rel_kluda_s2=round(abs_kluda_s2/s2_vid * 100, 2)
+
+
+print("s2_vid: ", s2_vid)
+print("s2_kv: ", s2_kv)
+print("gad_kluda_s2: ", gad_kluda_s2)
+print("sist_kluda_s2: ", sist_kluda_s2)
+print("abs_kluda_s2: ", abs_kluda_s2)
+print("rel_kluda_s2: ", rel_kluda_s2, "%")
+
 
 # Aprēķini pie h_3
 
@@ -391,46 +400,72 @@ zud_5_teor=round(Ez_5_teor/Ep_5*100, 2)
 
 # -------------------KLUDAS------------------
 
-print(sist_kluda_h)
-print(sist_kluda_l)
-print()
+# print(sist_kluda_h)
+# print(sist_kluda_l)
+# print()
 
-print("----------------------1----------------------")
-print(gad_kluda_s1)
-print(sist_kluda_s1)
-print(abs_kluda_s1)
-print(rel_kluda_s1) 
-print()
+# print("----------------------1----------------------")
+# print(gad_kluda_s1)
+# print(sist_kluda_s1)
+# print(abs_kluda_s1)
+# print(rel_kluda_s1) 
+# print()
 
-print("----------------------2----------------------")
-print(gad_kluda_s2)
-print(sist_kluda_s2)
-print(abs_kluda_s2)
-print(rel_kluda_s2)
-print()
+# print("----------------------2----------------------")
+# print(gad_kluda_s2)
+# print(sist_kluda_s2)
+# print(abs_kluda_s2)
+# print(rel_kluda_s2)
+# print()
 
-print("----------------------3----------------------")
-print(gad_kluda_s3)
-print(sist_kluda_s3)
-print(abs_kluda_s3)
-print(rel_kluda_s3)
-print()
+# print("----------------------3----------------------")
+# print(gad_kluda_s3)
+# print(sist_kluda_s3)
+# print(abs_kluda_s3)
+# print(rel_kluda_s3)
+# print()
 
-print("----------------------4----------------------")
-print(gad_kluda_s4)
-print(sist_kluda_s4)
-print(abs_kluda_s4)
-print(rel_kluda_s4) 
-print()
+# print("----------------------4----------------------")
+# print(gad_kluda_s4)
+# print(sist_kluda_s4)
+# print(abs_kluda_s4)
+# print(rel_kluda_s4) 
+# print()
 
-print("----------------------5----------------------")
-print(gad_kluda_s5)
-print(sist_kluda_s5)
-print(abs_kluda_s5)
-print(rel_kluda_s5)
-print()
+# print("----------------------5----------------------")
+# print(gad_kluda_s5)
+# print(sist_kluda_s5)
+# print(abs_kluda_s5)
+# print(rel_kluda_s5)
+# print()
 
-# -------------------KLUDAS------------------
+
+# -------------------ĀTRUMU KLUDAS------------------
+
+# print("----------------------1----------------------")
+# print(v1_pirms_kluda)
+# print(v1_pirms_rel)
+# print()
+
+# print("----------------------2----------------------")
+# print(v2_pirms_kluda)
+# print(v2_pirms_rel)
+# print()
+
+# print("----------------------3----------------------")
+# print(v3_pirms_kluda)
+# print(v3_pirms_rel)
+# print()
+
+# print("----------------------4----------------------")
+# print(v4_pirms_kluda)
+# print(v4_pirms_rel)
+# print()
+
+# print("----------------------5----------------------")
+# print(v5_pirms_kluda)
+# print(v5_pirms_rel)
+# print()
 
 
 # print(v1_pirms_val)

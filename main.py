@@ -308,10 +308,23 @@ zud_1_dig=round(Ez_1_dig/Ep_1*100, 2)
 
 # Zudumi pie h_4
 
+v4_dig_vid=round((v4_1d+v4_2d+v4_3d+v4_4d+v4_5d)/5, 3)
+w4_dig=v4_dig_vid/r
 
+Ep_4=round(ml*g*h_4, 4)
+Ek_4_dig=round((ml*v4_dig_vid**2)/2+(I*w4_dig**2)/2,4)
+Ez_4_dig=round(Ep_4-Ek_4_dig, 4)
+zud_4_dig=round(Ez_4_dig/Ep_4*100, 2)
 
 # Zudumi pie h_5
 
+v5_dig_vid=round((v5_1d+v5_2d+v5_3d+v5_4d+v5_5d)/5, 3)
+w5_dig=v5_dig_vid/r
+
+Ep_5=round(ml*g*h_5, 4)
+Ek_5_dig=round((ml*v5_dig_vid**2)/2+(I*w5_dig**2)/2,4)
+Ez_5_dig=round(Ep_5-Ek_5_dig, 4)
+zud_5_dig=round(Ez_5_dig/Ep_5*100, 2)
 
 
 # V ir aprēķināts teorētiski
@@ -325,11 +338,19 @@ zud_1_teor=round(Ez_1_teor/Ep_1*100, 2)
 
 # Zudumi pie h_4
 
+w4_teor=v4_pirms_val/r
 
+Ek_4_teor=round((ml*v4_pirms_val**2)/2+(I*w4_teor**2)/2,4)
+Ez_4_teor=round(Ep_4-Ek_4_teor, 4)
+zud_4_teor=round(Ez_4_teor/Ep_4*100, 2)
 
 # Zudumi pie h_5
 
+w1_teor=v1_pirms_val/r
 
+Ek_5_teor=round((ml*v5_pirms_val**2)/2+(I*w5_teor**2)/2,4)
+Ez_5_teor=round(Ep_5-Ek_5_teor, 4)
+zud_5_teor=round(Ez_5_teor/Ep_5*100, 2)
 
 
 

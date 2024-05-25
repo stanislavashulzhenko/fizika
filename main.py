@@ -202,13 +202,13 @@ values = {
 v1_pirms=(1+(mr_sym/ml_sym))*s1_vid_sym*sqrt(g_sym/l_sym)
 v1_pirms_val = round(v1_pirms.subs(values), 2)
 
-dV_ds=diff(v1_pirms, s1_vid_sym)
-dV_dl=diff(v1_pirms, l_sym)
+dV_ds_1=diff(v1_pirms, s1_vid_sym)
+dV_dl_1=diff(v1_pirms, l_sym)
 
-dV_ds_val=round(dV_ds.subs(values), 2)
-dV_dl_val=round(dV_dl.subs(values), 2)
+dV_ds_val_1=round(dV_ds_1.subs(values), 2)
+dV_dl_val_1=round(dV_dl_1.subs(values), 2)
 
-v1_pirms_kluda=round(sqrt((dV_ds_val*abs_kluda_s1)**2+(dV_dl_val*sist_kluda_l)**2), 4)
+v1_pirms_kluda=round(sqrt((dV_ds_val_1*abs_kluda_s1)**2+(dV_dl_val_1*sist_kluda_l)**2), 4)
 v1_pirms_rel=round(v1_pirms_kluda/v1_pirms_val*100, 2)
 
 # Ātrums pie h_2
@@ -216,11 +216,29 @@ v1_pirms_rel=round(v1_pirms_kluda/v1_pirms_val*100, 2)
 v2_pirms=(1+(mr_sym/ml_sym))*s2_vid_sym*sqrt(g_sym/l_sym)
 v2_pirms_val = round(v2_pirms.subs(values), 2)
 
+dV_ds_2=diff(v2_pirms, s2_vid_sym)
+dV_dl_2=diff(v2_pirms, l_sym)
+
+dV_ds_val_2=round(dV_ds_2.subs(values), 2)
+dV_dl_val_2=round(dV_dl_2.subs(values), 2)
+
+v2_pirms_kluda=round(sqrt((dV_ds_val_2*abs_kluda_s2)**2+(dV_dl_val_2*sist_kluda_l)**2), 4)
+v2_pirms_rel=round(v2_pirms_kluda/v2_pirms_val*100, 2)
+
 
 # Ātrums pie h_3
 
 v3_pirms=(1+(mr_sym/ml_sym))*s3_vid_sym*sqrt(g_sym/l_sym)
 v3_pirms_val = round(v3_pirms.subs(values), 2)
+
+dV_ds_3=diff(v3_pirms, s3_vid_sym)
+dV_dl_3=diff(v3_pirms, l_sym)
+
+dV_ds_val_3=round(dV_ds_3.subs(values), 2)
+dV_dl_val_3=round(dV_dl_3.subs(values), 2)
+
+v3_pirms_kluda=round(sqrt((dV_ds_val_3*abs_kluda_s3)**2+(dV_dl_val_3*sist_kluda_l)**2), 4)
+v3_pirms_rel=round(v3_pirms_kluda/v3_pirms_val*100, 2)
 
 
 # Ātrums pie h_4
@@ -228,11 +246,29 @@ v3_pirms_val = round(v3_pirms.subs(values), 2)
 v4_pirms=(1+(mr_sym/ml_sym))*s4_vid_sym*sqrt(g_sym/l_sym)
 v4_pirms_val = round(v4_pirms.subs(values), 2)
 
+dV_ds_4=diff(v4_pirms, s4_vid_sym)
+dV_dl_4=diff(v4_pirms, l_sym)
+
+dV_ds_val_4=round(dV_ds_4.subs(values), 2)
+dV_dl_val_4=round(dV_dl_4.subs(values), 2)
+
+v4_pirms_kluda=round(sqrt((dV_ds_val_4*abs_kluda_s4)**2+(dV_dl_val_4*sist_kluda_l)**2), 4)
+v4_pirms_rel=round(v4_pirms_kluda/v4_pirms_val*100, 2)
+
 
 # Ātrums pie h_5
 
 v5_pirms=(1+(mr_sym/ml_sym))*s5_vid_sym*sqrt(g_sym/l_sym)
 v5_pirms_val = round(v5_pirms.subs(values), 2)
+
+dV_ds_5=diff(v5_pirms, s5_vid_sym)
+dV_dl_5=diff(v5_pirms, l_sym)
+
+dV_ds_val_5=round(dV_ds_5.subs(values), 2)
+dV_dl_val_5=round(dV_dl_5.subs(values), 2)
+
+v5_pirms_kluda=round(sqrt((dV_ds_val_5*abs_kluda_s5)**2+(dV_dl_val_5*sist_kluda_l)**2), 4)
+v5_pirms_rel=round(v5_pirms_kluda/v5_pirms_val*100, 2)
 
 
 

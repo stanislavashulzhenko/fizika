@@ -299,10 +299,10 @@ dV_dH_val_1=round(dV_dH_1.subs(values), 2)
 v1_iev_kl= round(dV_dH_val_1*sist_kluda_h, 5)
 v1_iev_rel_kl=(v1_iev_kl/v1_iev_val)*100
 
-print()
-print(v1_iev_val)
-print(v1_iev_kl)
-print(v1_iev_rel_kl)
+# print()
+# print(v1_iev_val)
+# print(v1_iev_kl)
+# print(v1_iev_rel_kl)
 
 # Ātrums pie h_2
 
@@ -315,10 +315,10 @@ dV_dH_val_2=round(dV_dH_2.subs(values), 2)
 v2_iev_kl= round(dV_dH_val_2*sist_kluda_h, 5)
 v2_iev_rel_kl=(v2_iev_kl/v2_iev_val)*100
 
-print()
-print(v2_iev_val)
-print(v2_iev_kl)
-print(v2_iev_rel_kl)
+# print()
+# print(v2_iev_val)
+# print(v2_iev_kl)
+# print(v2_iev_rel_kl)
 
 # Ātrums pie h_3
 
@@ -331,10 +331,10 @@ dV_dH_val_3=round(dV_dH_3.subs(values), 2)
 v3_iev_kl= round(dV_dH_val_3*sist_kluda_h, 5)
 v3_iev_rel_kl=(v3_iev_kl/v3_iev_val)*100
 
-print()
-print(v3_iev_val)
-print(v3_iev_kl)
-print(v3_iev_rel_kl)
+# print()
+# print(v3_iev_val)
+# print(v3_iev_kl)
+# print(v3_iev_rel_kl)
 
 # Ātrums pie h_4
 
@@ -347,10 +347,10 @@ dV_dH_val_4=round(dV_dH_4.subs(values), 2)
 v4_iev_kl= round(dV_dH_val_4*sist_kluda_h, 5)
 v4_iev_rel_kl=(v4_iev_kl/v4_iev_val)*100
 
-print()
-print(v4_iev_val)
-print(v4_iev_kl)
-print(v4_iev_rel_kl)
+# print()
+# print(v4_iev_val)
+# print(v4_iev_kl)
+# print(v4_iev_rel_kl)
 
 # Ātrums pie h_5
 
@@ -363,10 +363,10 @@ dV_dH_val_5=round(dV_dH_5.subs(values), 2)
 v5_iev_kl= round(dV_dH_val_5*sist_kluda_h, 5)
 v5_iev_rel_kl=(v5_iev_kl/v5_iev_val)*100
 
-print()
-print(v5_iev_val)
-print(v5_iev_kl)
-print(v5_iev_rel_kl)
+# print()
+# print(v5_iev_val)
+# print(v5_iev_kl)
+# print(v5_iev_rel_kl)
 
 
 
@@ -380,27 +380,83 @@ print(v5_iev_rel_kl)
 # Ātrums pie h_1
 
 v1_neiev=sqrt(2*g_sym*h_1_sym)
-v1_neiev_val = round(v1_neiev.subs(values), 2)
+v1_neiev_val = round(v1_neiev.subs(values), 5)
+
+dV_dH_2_1=diff(v1_neiev, h_1_sym)
+dV_dH_val_2_1=round(dV_dH_2_1.subs(values), 5)
+
+v1_neiev_kl= round(dV_dH_val_2_1*sist_kluda_h, 5)
+v1_neiev_rel_kl=round((v1_neiev_kl/v1_neiev_val)*100, 3)
+
+# print()
+# print(v1_neiev_val)
+# print(v1_neiev_kl)
+# print(v1_neiev_rel_kl)
 
 # Ātrums pie h_2
 
 v2_neiev=sqrt(2*g_sym*h_2_sym)
-v2_neiev_val = round(v2_neiev.subs(values), 2)
+v2_neiev_val = round(v2_neiev.subs(values), 5)
+
+dV_dH_2_2=diff(v2_neiev, h_2_sym)
+dV_dH_val_2_2=round(dV_dH_2_2.subs(values), 5)
+
+v2_neiev_kl= round(dV_dH_val_2_2*sist_kluda_h, 5)
+v2_neiev_rel_kl=round((v2_neiev_kl/v2_neiev_val)*100, 3)
+
+# print()
+# print(v2_neiev_val)
+# print(v2_neiev_kl)
+# print(v2_neiev_rel_kl)
 
 # Ātrums pie h_3
 
 v3_neiev=sqrt(2*g_sym*h_3_sym)
-v3_neiev_val = round(v3_neiev.subs(values), 2)
+v3_neiev_val = round(v3_neiev.subs(values), 5)
+
+dV_dH_2_3=diff(v3_neiev, h_3_sym)
+dV_dH_val_2_3=round(dV_dH_2_3.subs(values), 5)
+
+v3_neiev_kl= round(dV_dH_val_2_3*sist_kluda_h, 5)
+v3_neiev_rel_kl=round((v3_neiev_kl/v3_neiev_val)*100, 3)
+
+# print()
+# print(v3_neiev_val)
+# print(v3_neiev_kl)
+# print(v3_neiev_rel_kl)
 
 # Ātrums pie h_4
 
 v4_neiev=sqrt(2*g_sym*h_4_sym)
-v4_neiev_val = round(v4_neiev.subs(values), 2)
+v4_neiev_val = round(v4_neiev.subs(values), 5)
+
+dV_dH_2_4=diff(v4_neiev, h_4_sym)
+dV_dH_val_2_4=round(dV_dH_2_4.subs(values), 5)
+
+v4_neiev_kl= round(dV_dH_val_2_4*sist_kluda_h, 5)
+v4_neiev_rel_kl=round((v4_neiev_kl/v4_neiev_val)*100, 3)
+
+# print()
+# print(v4_neiev_val)
+# print(v4_neiev_kl)
+# print(v4_neiev_rel_kl)
 
 # Ātrums pie h_5
 
 v5_neiev=sqrt(2*g_sym*h_5_sym)
-v5_neiev_val = round(v5_neiev.subs(values), 2)
+v5_neiev_val = round(v5_neiev.subs(values), 5)
+
+dV_dH_2_5=diff(v5_neiev, h_5_sym)
+dV_dH_val_2_5=round(dV_dH_2_5.subs(values), 5)
+
+v5_neiev_kl= round(dV_dH_val_2_5*sist_kluda_h, 5)
+v5_neiev_rel_kl=round((v5_neiev_kl/v5_neiev_val)*100, 3)
+
+# print()
+# print(v5_neiev_val)
+# print(v5_neiev_kl)
+# print(v5_neiev_rel_kl)
+
 
 
 # Enerģijas zudumi renē 

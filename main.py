@@ -29,69 +29,19 @@ mv_s=0.001 # Mazāka vertība novirzei (m)
 mv_h=0.001 # Mazāka vertība augstumam (m)
 
 # Mērījumi 
-# Rāmīša novirze pie h_1 (m)
+# Rāmīša novirze (m)
 
-s1_1=0.066 
-s1_2=0.065
-s1_3=0.064
-s1_4=0.064
-s1_5=0.064
+s1_1, s1_2, s1_3, s1_4, s1_5 = 0.066, 0.065, 0.064, 0.064, 0.064  # pie h_1
+s2_1, s2_2, s2_3, s2_4, s2_5 = 0.06, 0.06, 0.06, 0.061, 0.062  # pie h_2
+s3_1, s3_2, s3_3, s3_4, s3_5 = 0.055, 0.053, 0.057, 0.059, 0.056  # pie h_3
+s4_1, s4_2, s4_3, s4_4, s4_5 = 0.043, 0.042, 0.042, 0.041, 0.04  # pie h_4
+s5_1, s5_2, s5_3, s5_4, s5_5 = 0.021, 0.022, 0.023, 0.022, 0.023  # pie h_5
 
-# Rāmīša novirze pie h_2 (m)
+# Lodītes ātrums (digitāli) (m/s)
 
-s2_1=0.060
-s2_2=0.060
-s2_3=0.060
-s2_4=0.061
-s2_5=0.062
-
-# Rāmīša novirze pie h_3 (m)
-
-s3_1=0.055 
-s3_2=0.053
-s3_3=0.057
-s3_4=0.059
-s3_5=0.056
-
-# Rāmīša novirze pie h_4 (m)
-
-s4_1=0.043 
-s4_2=0.042
-s4_3=0.042
-s4_4=0.041
-s4_5=0.04
-
-# Rāmīša novirze pie h_5 (m)
-
-s5_1=0.021 
-s5_2=0.022
-s5_3=0.023
-s5_4=0.022
-s5_5=0.023
-
-# Lodītes ātrums (digitāli) pie h_1 (m/s)
-
-v1_1d=2.963
-v1_2d=2.996
-v1_3d=2.96
-v1_4d=2.989
-v1_5d=3.002
-
-# Lodītes ātrums (digitāli) pie h_4 (m/s)
-
-v4_1d=1.759
-v4_2d=1.765
-v4_3d=1.826
-v4_4d=1.77
-v4_5d=1.763
-
-# Lodītes ātrums (digitāli) pie h_5 (m/s)
-
-v5_1d=1.011
-v5_2d=1.013
-v5_3d=1.014
-v5_4d=0.988
-v5_5d=0.987
+v1_1d, v1_2d, v1_3d, v1_4d, v1_5d = 2.963, 2.996, 2.96, 2.989, 3.002  # pie h_1
+v4_1d, v4_2d, v4_3d, v4_4d, v4_5d = 1.759, 1.765, 1.826, 1.77, 1.763  # pie h_4
+v5_1d, v5_2d, v5_3d, v5_4d, v5_5d = 1.011, 1.013, 1.014, 0.988, 0.987  # pie h_5
 
 # Sistemātiskas kļūdas
 
@@ -128,15 +78,6 @@ elif gad_kluda_s2 > sist_kluda_s2:
   abs_kluda_s2 = gad_kluda_s2  
 
 rel_kluda_s2=round(abs_kluda_s2/s2_vid * 100, 2)
-
-
-# print("s2_vid: ", s2_vid)
-# print("s2_kv: ", s2_kv)
-# print("gad_kluda_s2: ", gad_kluda_s2)
-# print("sist_kluda_s2: ", sist_kluda_s2)
-# print("abs_kluda_s2: ", abs_kluda_s2)
-# print("rel_kluda_s2: ", rel_kluda_s2, "%")
-
 
 # Aprēķini pie h_3
 
@@ -202,8 +143,6 @@ values = {
     h_4_sym: 0.305,
     h_5_sym: 0.105
 }
-
-
 
 # Lodītes ātrums pirms sadursmes (eksperimentāli)
 # Ātrums pie h_1
@@ -277,16 +216,6 @@ v5_pirms_kluda=round(sqrt((dV_ds_val_5*abs_kluda_s5)**2+(dV_dl_val_5*sist_kluda_
 v5_pirms_rel=round(v5_pirms_kluda/v5_pirms_val*100, 2)
 
 
-
-
-
-
-
-
-
-
-
-
 # Teorētiski aprēķinātais ātrums ievērojot rotāciju
 # Ātrums pie h_1
 
@@ -299,11 +228,6 @@ dV_dH_val_1=round(dV_dH_1.subs(values), 2)
 v1_iev_kl= round(dV_dH_val_1*sist_kluda_h, 5)
 v1_iev_rel_kl=(v1_iev_kl/v1_iev_val)*100
 
-# print()
-# print(v1_iev_val)
-# print(v1_iev_kl)
-# print(v1_iev_rel_kl)
-
 # Ātrums pie h_2
 
 v2_iev=sqrt((10/7)*g_sym*h_2_sym)
@@ -314,11 +238,6 @@ dV_dH_val_2=round(dV_dH_2.subs(values), 2)
 
 v2_iev_kl= round(dV_dH_val_2*sist_kluda_h, 5)
 v2_iev_rel_kl=(v2_iev_kl/v2_iev_val)*100
-
-# print()
-# print(v2_iev_val)
-# print(v2_iev_kl)
-# print(v2_iev_rel_kl)
 
 # Ātrums pie h_3
 
@@ -331,11 +250,6 @@ dV_dH_val_3=round(dV_dH_3.subs(values), 2)
 v3_iev_kl= round(dV_dH_val_3*sist_kluda_h, 5)
 v3_iev_rel_kl=(v3_iev_kl/v3_iev_val)*100
 
-# print()
-# print(v3_iev_val)
-# print(v3_iev_kl)
-# print(v3_iev_rel_kl)
-
 # Ātrums pie h_4
 
 v4_iev=sqrt((10/7)*g_sym*h_4_sym)
@@ -347,11 +261,6 @@ dV_dH_val_4=round(dV_dH_4.subs(values), 2)
 v4_iev_kl= round(dV_dH_val_4*sist_kluda_h, 5)
 v4_iev_rel_kl=(v4_iev_kl/v4_iev_val)*100
 
-# print()
-# print(v4_iev_val)
-# print(v4_iev_kl)
-# print(v4_iev_rel_kl)
-
 # Ātrums pie h_5
 
 v5_iev=sqrt((10/7)*g_sym*h_5_sym)
@@ -362,18 +271,6 @@ dV_dH_val_5=round(dV_dH_5.subs(values), 2)
 
 v5_iev_kl= round(dV_dH_val_5*sist_kluda_h, 5)
 v5_iev_rel_kl=(v5_iev_kl/v5_iev_val)*100
-
-# print()
-# print(v5_iev_val)
-# print(v5_iev_kl)
-# print(v5_iev_rel_kl)
-
-
-
-
-
-
-
 
 
 # Teorētiski aprēķinātais ātrums neievērojot rotāciju
@@ -388,11 +285,6 @@ dV_dH_val_2_1=round(dV_dH_2_1.subs(values), 5)
 v1_neiev_kl= round(dV_dH_val_2_1*sist_kluda_h, 5)
 v1_neiev_rel_kl=round((v1_neiev_kl/v1_neiev_val)*100, 3)
 
-# print()
-# print(v1_neiev_val)
-# print(v1_neiev_kl)
-# print(v1_neiev_rel_kl)
-
 # Ātrums pie h_2
 
 v2_neiev=sqrt(2*g_sym*h_2_sym)
@@ -403,11 +295,6 @@ dV_dH_val_2_2=round(dV_dH_2_2.subs(values), 5)
 
 v2_neiev_kl= round(dV_dH_val_2_2*sist_kluda_h, 5)
 v2_neiev_rel_kl=round((v2_neiev_kl/v2_neiev_val)*100, 3)
-
-# print()
-# print(v2_neiev_val)
-# print(v2_neiev_kl)
-# print(v2_neiev_rel_kl)
 
 # Ātrums pie h_3
 
@@ -420,11 +307,6 @@ dV_dH_val_2_3=round(dV_dH_2_3.subs(values), 5)
 v3_neiev_kl= round(dV_dH_val_2_3*sist_kluda_h, 5)
 v3_neiev_rel_kl=round((v3_neiev_kl/v3_neiev_val)*100, 3)
 
-# print()
-# print(v3_neiev_val)
-# print(v3_neiev_kl)
-# print(v3_neiev_rel_kl)
-
 # Ātrums pie h_4
 
 v4_neiev=sqrt(2*g_sym*h_4_sym)
@@ -436,11 +318,6 @@ dV_dH_val_2_4=round(dV_dH_2_4.subs(values), 5)
 v4_neiev_kl= round(dV_dH_val_2_4*sist_kluda_h, 5)
 v4_neiev_rel_kl=round((v4_neiev_kl/v4_neiev_val)*100, 3)
 
-# print()
-# print(v4_neiev_val)
-# print(v4_neiev_kl)
-# print(v4_neiev_rel_kl)
-
 # Ātrums pie h_5
 
 v5_neiev=sqrt(2*g_sym*h_5_sym)
@@ -451,12 +328,6 @@ dV_dH_val_2_5=round(dV_dH_2_5.subs(values), 5)
 
 v5_neiev_kl= round(dV_dH_val_2_5*sist_kluda_h, 5)
 v5_neiev_rel_kl=round((v5_neiev_kl/v5_neiev_val)*100, 3)
-
-# print()
-# print(v5_neiev_val)
-# print(v5_neiev_kl)
-# print(v5_neiev_rel_kl)
-
 
 
 # Enerģijas zudumi renē 
@@ -514,135 +385,100 @@ zud_4_teor=round(Ez_4_teor/Ep_4*100, 2)
 
 # Zudumi pie h_5
 
-w5_teor=v1_pirms_val/r
+w5_teor=v5_pirms_val/r
 
 Ek_5_teor=round((ml*v5_pirms_val**2)/2+(I*w5_teor**2)/2,4)
 Ez_5_teor=round(Ep_5-Ek_5_teor, 4)
 zud_5_teor=round(Ez_5_teor/Ep_5*100, 2)
 
-
-# -------------------KLUDAS------------------
-
-# print(sist_kluda_h)
-# print(sist_kluda_l)
-# print()
-
-# print("----------------------1----------------------")
-# print(gad_kluda_s1)
-# print(sist_kluda_s1)
-# print(abs_kluda_s1)
-# print(rel_kluda_s1) 
-# print()
-
-# print("----------------------2----------------------")
-# print(gad_kluda_s2)
-# print(sist_kluda_s2)
-# print(abs_kluda_s2)
-# print(rel_kluda_s2)
-# print()
-
-# print("----------------------3----------------------")
-# print(gad_kluda_s3)
-# print(sist_kluda_s3)
-# print(abs_kluda_s3)
-# print(rel_kluda_s3)
-# print()
-
-# print("----------------------4----------------------")
-# print(gad_kluda_s4)
-# print(sist_kluda_s4)
-# print(abs_kluda_s4)
-# print(rel_kluda_s4) 
-# print()
-
-# print("----------------------5----------------------")
-# print(gad_kluda_s5)
-# print(sist_kluda_s5)
-# print(abs_kluda_s5)
-# print(rel_kluda_s5)
-# print()
-
-
-# -------------------ĀTRUMU KLUDAS------------------
-
-# print("----------------------1----------------------")
-# print(v1_pirms_kluda)
-# print(v1_pirms_rel)
-# print()
-
-# print("----------------------2----------------------")
-# print(v2_pirms_kluda)
-# print(v2_pirms_rel)
-# print()
-
-# print("----------------------3----------------------")
-# print(v3_pirms_kluda)
-# print(v3_pirms_rel)
-# print()
-
-# print("----------------------4----------------------")
-# print(v4_pirms_kluda)
-# print(v4_pirms_rel)
-# print()
-
-# print("----------------------5----------------------")
-# print(v5_pirms_kluda)
-# print(v5_pirms_rel)
-# print()
-
-
-# print(v1_pirms_val)
-# print(v2_pirms_val)
-# print(v3_pirms_val)
-# print(v4_pirms_val)
-# print(v5_pirms_val)
-# print() 
-
-# print(v1_iev_val)
-# print(v2_iev_val)
-# print(v3_iev_val)
-# print(v4_iev_val)
-# print(v5_iev_val)
-# print()
-
-# print(v1_neiev_val)
-# print(v2_neiev_val)
-# print(v3_neiev_val)
-# print(v4_neiev_val)
-# print(v5_neiev_val)
-# print()
-
-# print(Ep_1)
-# print(Ek_1_dig)
-# print(Ez_1_dig)
-# print(zud_1_dig)
-# print()
-
-# print(Ep_2)
-# print(Ek_2_dig)
-# print(Ez_2_dig)
-# print(zud_2_dig)
-# print()
-
-# print(Ep_3)
-# print(Ek_3_dig)
-# print(Ez_3_dig)
-# print(zud_3_dig)
-# print()
-
-# print(Ep_1)
-# print(Ek_1_teor)
-# print(Ez_1_teor)
-# print(zud_1_teor)
-# print()
-
-# print(Ep_2)
-# print(Ek_2_dig)
-# print(Ez_2_dig)
-# print(zud_2_dig)
-# print()
-
-# print(Ep_3)
-# print(Ek_3_dig)
-# print(Ez_3_dig)
-# print(zud_3_dig)
+lines = [
+  f"-----------------------------------------1-----------------------------------------\n"
+  f"\n"
+  f"Lodītes ātrums pirms sadursmes (eksperimentāli) pie h=0,705 m: {v1_pirms_val} m/s\n"
+  f"Absolūta kļūda: {v1_pirms_kluda} m/s\n"
+  f"Relatīva kļūda: {v1_pirms_rel}%\n"
+  f"\n"
+  f"Lodītes ātrums pirms sadursmes (eksperimentāli) pie h=0,605 m: {v2_pirms_val} m/s\n"
+  f"Absolūta kļūda: {v2_pirms_kluda} m/s\n"
+  f"Relatīva kļūda: {v2_pirms_rel}%\n"
+  f"\n"
+  f"Lodītes ātrums pirms sadursmes (eksperimentāli) pie h=0,505 m: {v3_pirms_val} m/s\n"
+  f"Absolūta kļūda: {v3_pirms_kluda} m/s\n"
+  f"Relatīva kļūda: {v3_pirms_rel}%\n"
+  f"\n"
+  f"Lodītes ātrums pirms sadursmes (eksperimentāli) pie h=0,305 m: {v4_pirms_val} m/s\n"
+  f"Absolūta kļūda: {v4_pirms_kluda} m/s\n"
+  f"Relatīva kļūda: {v4_pirms_rel}%\n"
+  f"\n"
+  f"Lodītes ātrums pirms sadursmes (eksperimentāli) pie h=0,105 m: {v5_pirms_val} m/s\n"
+  f"Absolūta kļūda: {v5_pirms_kluda} m/s\n"
+  f"Relatīva kļūda: {v5_pirms_rel}%\n"
+  f"\n"
+  f"-----------------------------------------2-----------------------------------------\n"
+  f"\n"
+  f"Teorētiski aprēķinātais ātrums ievērojot rotāciju pie h=0,705 m: {v1_iev_val} m/s\n"
+  f"Absolūta kļūda: {v1_iev_kl} m/s\n"
+  f"Relatīva kļūda: {v1_iev_rel_kl}%\n"
+  f"\n"
+  f"Teorētiski aprēķinātais ātrums ievērojot rotāciju pie h=0,605 m: {v2_iev_val} m/s\n"
+  f"Absolūta kļūda: {v2_iev_kl} m/s\n"
+  f"Relatīva kļūda: {v2_iev_rel_kl}%\n"
+  f"\n"
+  f"Teorētiski aprēķinātais ātrums ievērojot rotāciju pie h=0,505 m: {v3_iev_val} m/s\n"
+  f"Absolūta kļūda: {v3_iev_kl} m/s\n"
+  f"Relatīva kļūda: {v3_iev_rel_kl}%\n"
+  f"\n"
+  f"Teorētiski aprēķinātais ātrums ievērojot rotāciju pie h=0,305 m: {v4_iev_val} m/s\n"
+  f"Absolūta kļūda: {v4_iev_kl} m/s\n"
+  f"Relatīva kļūda: {v4_iev_rel_kl}%\n"
+  f"\n"
+  f"Teorētiski aprēķinātais ātrums ievērojot rotāciju pie h=0,105 m: {v5_iev_val} m/s\n"
+  f"Absolūta kļūda: {v5_iev_kl} m/s\n"
+  f"Relatīva kļūda: {v5_iev_rel_kl}%\n"
+  f"\n"
+  f"-----------------------------------------3-----------------------------------------\n"
+  f"\n"
+  f"Teorētiski aprēķinātais ātrums neievērojot rotāciju pie h=0,705 m: {v1_neiev_val} m/s\n"
+  f"Absolūta kļūda: {v1_neiev_kl} m/s\n"
+  f"Relatīva kļūda: {v1_neiev_rel_kl}%\n"
+  f"\n"
+  f"Teorētiski aprēķinātais ātrums neievērojot rotāciju pie h=0,605 m: {v2_neiev_val} m/s\n"
+  f"Absolūta kļūda: {v2_neiev_kl} m/s\n"
+  f"Relatīva kļūda: {v2_neiev_rel_kl}%\n"
+  f"\n"
+  f"Teorētiski aprēķinātais ātrums neievērojot rotāciju pie h=0,505 m: {v3_neiev_val} m/s\n"
+  f"Absolūta kļūda: {v3_neiev_kl} m/s\n"
+  f"Relatīva kļūda: {v3_neiev_rel_kl}%\n"
+  f"\n"
+  f"Teorētiski aprēķinātais ātrums neievērojot rotāciju pie h=0,305 m: {v4_neiev_val} m/s\n"
+  f"Absolūta kļūda: {v4_neiev_kl} m/s\n"
+  f"Relatīva kļūda: {v4_neiev_rel_kl}%\n"
+  f"\n"
+  f"Teorētiski aprēķinātais ātrums neievērojot rotāciju pie h=0,105 m: {v5_neiev_val} m/s\n"
+  f"Absolūta kļūda: {v5_neiev_kl} m/s\n"
+  f"Relatīva kļūda: {v5_neiev_rel_kl}%\n"
+  f"\n"
+  f"-----------------------------------------4-----------------------------------------\n"
+  f"\n"
+  f"Enerģijas zudumi renē (V ir izmērīts diģitāli) pie h=0,705 m: {zud_1_dig}%\n"
+  f"Enerģijas zudumi renē (V ir aprēķināts teorētiski) pie h=0,705 m: {zud_1_teor}%\n"
+  f"\n"
+  f"Enerģijas zudumi renē (V ir izmērīts diģitāli) pie h=0,305 m: {zud_4_dig}%\n"
+  f"Enerģijas zudumi renē (V ir aprēķināts teorētiski) pie h=0,305 m: {zud_4_teor}%\n"
+  f"\n"
+  f"Enerģijas zudumi renē (V ir izmērīts diģitāli) pie h=0,105 m: {zud_5_dig}%\n"
+  f"Enerģijas zudumi renē (V ir aprēķināts teorētiski) pie h=0,105 m: {zud_5_teor}%\n"
+  f"\n"
+  f"         AAAAAAA   AAAAAAA         \n"
+  f"       AAAAAAAAAA AAAAAAAAAA       \n"
+  f"       AAAAAAAAAAAAAAAAAAAAA       \n"
+  f"       AAAAAAAAAAAAAAAAAAAAA       \n"
+  f"        AAAAAAAAAAAAAAAAAAA        \n"
+  f"         AAAAAAAAAAAAAAAAA         \n"
+  f"           AAAAAAAAAAAAA           \n"
+  f"             AAAAAAAAA             \n"
+  f"               AAAAA               \n"
+  f"                 A                 \n"
+]
+with open('rezultati1.txt', 'w', encoding='utf-8') as f:
+    f.writelines(lines)

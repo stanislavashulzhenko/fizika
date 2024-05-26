@@ -479,6 +479,18 @@ lines = [
   f"             AAAAAAAAA             \n"
   f"               AAAAA               \n"
   f"                 A                 \n"
+  f"\n"
+  f"        ***             ***          \n"
+  f"     *       *       *       *       \n"
+  f"    *         * *** *         *      \n"
+  f"    *        *       *        *      \n"
+  f"    *         * *** *         *      \n"
+  f"     *      *  *   *  *      *       \n"
+  f"      *    *  *     *  *    *        \n"
+  f"        ***    *   *    ***          \n"
+  f"        *     *     *     *          \n"
+  f"       *  *  *       *  *  *         \n"
+  f"        *   *         *   *          \n"
 ]
 with open('rezultati1.txt', 'w', encoding='utf-8') as f:
     f.writelines(lines)

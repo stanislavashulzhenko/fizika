@@ -125,7 +125,7 @@ rel_kluda_s5=abs_kluda_s5/s5_vid * 100
 # ------------------------------------------------------------------------------------------------------------------------------
 # Netiešie mērījumi
 
-mr_sym, ml_sym, l_sym, g_sym, s1_vid_sym, s2_vid_sym, s3_vid_sym, s4_vid_sym, s5_vid_sym, h_1_sym, h_2_sym, h_3_sym, h_4_sym, h_5_sym = symbols('mr ml l g s1_vid s2_vid s3_vid s4_vid s5_vid h_1 h_2 h_3 h_4 h_5')
+mr_sym, ml_sym, l_sym, g_sym, s1_vid_sym, s2_vid_sym, s3_vid_sym, s4_vid_sym, s5_vid_sym, h_1_sym, h_2_sym, h_3_sym, h_4_sym, h_5_sym = symbols('mr_sym ml_sym l_sym g_sym s1_vid_sym s2_vid_sym s3_vid_sym s4_vid_sym s5_vid_sym h_1_sym h_2_sym h_3_sym h_4_sym h_5_sym')
 
 values = {
     mr_sym: 0.1372,
@@ -366,30 +366,30 @@ Ez_5_dig=Ep_5-Ek_5_dig
 zud_5_dig=Ez_5_dig/Ep_5*100
 
 
-# V ir aprēķināts teorētiski
+# V ir aprēķināts eksperimentāli
 # Zudumi pie h_1
 
-w1_teor=v1_pirms_val/r
+w1_eks=v1_pirms_val/r
 
-Ek_1_teor=(ml*v1_pirms_val**2)/2+(I*w1_teor**2)/2
-Ez_1_teor=Ep_1-Ek_1_teor
-zud_1_teor=Ez_1_teor/Ep_1*100
+Ek_1_eks=(ml*v1_pirms_val**2)/2+(I*w1_eks**2)/2
+Ez_1_eks=Ep_1-Ek_1_eks
+zud_1_eks=Ez_1_eks/Ep_1*100
 
 # Zudumi pie h_4
 
-w4_teor=v4_pirms_val/r
+w4_eks=v4_pirms_val/r
 
-Ek_4_teor=(ml*v4_pirms_val**2)/2+(I*w4_teor**2)/2
-Ez_4_teor=Ep_4-Ek_4_teor
-zud_4_teor=Ez_4_teor/Ep_4*100
+Ek_4_eks=(ml*v4_pirms_val**2)/2+(I*w4_eks**2)/2
+Ez_4_eks=Ep_4-Ek_4_eks
+zud_4_eks=Ez_4_eks/Ep_4*100
 
 # Zudumi pie h_5
 
-w5_teor=v5_pirms_val/r
+w5_eks=v5_pirms_val/r
 
-Ek_5_teor=(ml*v5_pirms_val**2)/2+(I*w5_teor**2)/2
-Ez_5_teor=Ep_5-Ek_5_teor
-zud_5_teor=Ez_5_teor/Ep_5*100
+Ek_5_eks=(ml*v5_pirms_val**2)/2+(I*w5_eks**2)/2
+Ez_5_eks=Ep_5-Ek_5_eks
+zud_5_eks=Ez_5_eks/Ep_5*100
 
 lines = [
   f"-----------------------------------------1-----------------------------------------\n"
@@ -461,13 +461,13 @@ lines = [
   f"-----------------------------------------4-----------------------------------------\n"
   f"\n"
   f"Enerģijas zudumi renē (V ir izmērīts diģitāli) pie h=0,705 m: {zud_1_dig}%\n"
-  f"Enerģijas zudumi renē (V ir aprēķināts teorētiski) pie h=0,705 m: {zud_1_teor}%\n"
+  f"Enerģijas zudumi renē (V ir aprēķināts eksperimentāli) pie h=0,705 m: {zud_1_eks}%\n"
   f"\n"
   f"Enerģijas zudumi renē (V ir izmērīts diģitāli) pie h=0,305 m: {zud_4_dig}%\n"
-  f"Enerģijas zudumi renē (V ir aprēķināts teorētiski) pie h=0,305 m: {zud_4_teor}%\n"
+  f"Enerģijas zudumi renē (V ir aprēķināts eksperimentāli) pie h=0,305 m: {zud_4_eks}%\n"
   f"\n"
   f"Enerģijas zudumi renē (V ir izmērīts diģitāli) pie h=0,105 m: {zud_5_dig}%\n"
-  f"Enerģijas zudumi renē (V ir aprēķināts teorētiski) pie h=0,105 m: {zud_5_teor}%\n"
+  f"Enerģijas zudumi renē (V ir aprēķināts eksperimentāli) pie h=0,105 m: {zud_5_eks}%\n"
 ]
 with open('results.txt', 'w', encoding='utf-8') as f:
     f.writelines(lines)

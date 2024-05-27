@@ -14,7 +14,7 @@ from sympy import symbols, sqrt, diff
 g=9.81 # Brīvās krišanas paātrinājums (m/s^2)
 ml=0.01397 # Lodītes masa (kg)
 mr=0.1372 # Rāmīša masa (kg)
-l=0.749 # Vītnes garums (m)
+l=0.749 # Diegas garums (m)
 r=0.0075 # Lodītes radiuss (m)
 st_5=2.78 # Stjūdenta koeficients pie n=5
 st_bezg=1.96 # Stjūdenta koeficients pie n=bezgalība
